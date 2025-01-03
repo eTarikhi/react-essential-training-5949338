@@ -7,7 +7,14 @@ function Header() {
 }
 
 function App() {
-  return <Header />;
+  return (
+  <div>
+    <Header />
+    <main>
+      <h2>Lorem IPSUM</h2>
+    </main>
+  </div>
+  );
 }
 
 export default App;
