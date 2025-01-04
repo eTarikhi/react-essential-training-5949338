@@ -1,5 +1,11 @@
 import "./App.css";
 
+const items = [
+  "Macaroni and Cheese",
+  "Salmon with Potatoes",
+  "Tofu with Vegetables"
+];
+
 function Header({name, year}) {
   // console.log(props);
   return (
@@ -10,15 +16,23 @@ function Header({name, year}) {
   );
 }
 
+function Main ({ dishes }) {
+  return (
+    <ul>
+      {dishes.map((dish) => (
+        <li style={{ listStyleType: "none" }}>{dish}</li>
+      ))}
+    </ul>
+  );
+}
+
 function App() {
   return (
   <div>
     <Header name="Emir" year="2023"/>
     <Header name="Amir" year="2024"/>
     <Header name="Ali" year={new Date().getFullYear()}/>
-    <main>
-      <h2>Lorem IPSUM</h2>
-    </main>
+    <Main dishes={items} />
   </div>
   );
 }
