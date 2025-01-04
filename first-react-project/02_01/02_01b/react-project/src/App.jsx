@@ -1,15 +1,21 @@
 import "./App.css";
 
-function Header() {
+function Header(props) {
+  console.log(props);
   return (
-    <h1>Emir's Kitchen</h1>
+    <div>
+      <h1>{props.name}'s Kitchen</h1>
+      <p>Copyright {props.year}</p>
+    </div>
   );
 }
 
 function App() {
   return (
   <div>
-    <Header />
+    <Header name="Emir" year="2023"/>
+    <Header name="Amir" year="2024"/>
+    <Header name="Ali" year={new Date().getFullYear()}/>
     <main>
       <h2>Lorem IPSUM</h2>
     </main>
