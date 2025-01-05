@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import chef from "./images/chef.jpg";
 
@@ -25,16 +26,21 @@ function Header({ name, year }) {
 
 function Main({ dishes }) {
   return (
-    <main>
-      <img src={chef} height={200} alt="A photo of a smiling chef owner" />
-      <ul>
-        {dishes.map((dish) => (
-          <li key={dish.id} style={{ listStyleType: "none" }}>
-            {dish.title}
-          </li>
-        ))}
-      </ul>
-    </main>
+    <div>
+      <div>
+        <h2>Welcome to this beautiful restaurant!</h2>
+      </div>
+      <main>
+        <img src={chef} height={200} alt="A photo of a smiling chef owner" />
+        <ul>
+          {dishes.map((dish) => (
+            <li key={dish.id} style={{ listStyleType: "none" }}>
+              {dish.title}
+            </li>
+          ))}
+        </ul>
+      </main>
+    </div>
   );
 }
 
