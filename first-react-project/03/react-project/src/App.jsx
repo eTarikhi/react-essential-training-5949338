@@ -1,5 +1,5 @@
 import "./App.css";
-import { chef } from "./images/chef.jpg";
+import chef from "./images/chef.jpg";
 
 const items = [
   "Macaroni and Cheese",
