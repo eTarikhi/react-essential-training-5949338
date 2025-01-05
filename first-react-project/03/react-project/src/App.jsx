@@ -26,7 +26,7 @@ function Header({ name, year }) {
 
 function Main({ dishes }) {
   return (
-    <div>
+    <React.Fragment>
       <div>
         <h2>Welcome to this beautiful restaurant!</h2>
       </div>
@@ -40,7 +40,7 @@ function Main({ dishes }) {
           ))}
         </ul>
       </main>
-    </div>
+    </React.Fragment>
   );
 }
 
