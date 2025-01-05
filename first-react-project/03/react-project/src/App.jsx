@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "./App.css";
 import chef from "./images/chef.jpg";
 
@@ -26,7 +26,7 @@ function Header({ name, year }) {
 
 function Main({ dishes }) {
   return (
-    <React.Fragment>
+    <>
       <div>
         <h2>Welcome to this beautiful restaurant!</h2>
       </div>
@@ -40,7 +40,7 @@ function Main({ dishes }) {
           ))}
         </ul>
       </main>
-    </React.Fragment>
+    </>
   );
 }
 
