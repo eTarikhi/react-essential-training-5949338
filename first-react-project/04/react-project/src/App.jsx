@@ -25,11 +25,21 @@ function Header({ name, year }) {
   );
 }
 
-function Main({ dishes }) {
+function Main({ dishes, openStatus, onStatus }) {
   return (
     <>
       <div>
-        <h2>Welcome to this beautiful restaurant!</h2>
+        <p>
+          Click the button to change the status of the restaurant from Main
+          Function (Child Level Function).
+        </p>
+        <button onClick={() => onStatus(openStatus ? false : true)}>
+          I Want The Restaurant to be {openStatus ? "Open" : "Closed"}.
+        </button>
+        <h2>
+          Welcome to this beautiful restaurant! currently{" "}
+          {openStatus ? "Open" : "Closed"}.
+        </h2>
       </div>
       <main>
         <img src={chef} height={200} alt="A photo of a smiling chef owner" />
@@ -59,13 +69,17 @@ function App() {
       <button onClick={() => setStatus("Closed")}>Close Restaurant</button>
       */}
 
+      <p>
+        Click the button to change the status of the restaurant from App
+        Function (Highest Level Function).
+      </p>
       <h1>The restaurant is currently {status ? "Open" : "Closed"}.</h1>
       <button onClick={() => setStatus(!status)}>
         {!status ? "Open" : "Close"} Restaurant
       </button>
 
       <Header name="Emir" year="2023" />
-      <Main dishes={dishObjects} />
+      <Main dishes={dishObjects} openStatus={status} onStatus={setStatus} />
       <Header name="Amir" year="2024" />
       <Header name="Ali" year={new Date().getFullYear()} />
     </div>
