@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 
 const [first, second, third] = ["giraffe", "cat", "dog"];
-console.log(first, second, third);
+// console.log(first, second, third);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
