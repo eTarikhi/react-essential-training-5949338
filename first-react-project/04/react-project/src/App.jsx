@@ -1,5 +1,5 @@
 // import React from "react";
-import { useState, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import "./App.css";
 import chef from "./images/chef.jpg";
 
@@ -57,7 +57,12 @@ function Main({ dishes, openStatus, onStatus }) {
 
 function App() {
   // const [status, setStatus] = useState(true);
+
   const [status, toggle] = useReducer((status) => !status, true);
+
+  useEffect(() => {
+    console.log(`The restaurant is ${status ? "Open" : "Closed"}.`);
+  }, [status]);
 
   // const [status, setStatus] = useState("Open");
   // console.log(status);
@@ -75,16 +80,14 @@ function App() {
         Function (Highest Level Function).
       </p>
       <h1>The restaurant is currently {status ? "Open" : "Closed"}.</h1>
-      
+
       {/*
       <button onClick={() => setStatus(!status)}>
         {!status ? "Open" : "Close"} Restaurant
       </button>
       */}
 
-      <button onClick={toggle}>
-        {!status ? "Open" : "Close"} Restaurant
-      </button>
+      <button onClick={toggle}>{!status ? "Open" : "Close"} Restaurant</button>
       <Header name="Emir" year="2023" />
       <Main dishes={dishObjects} openStatus={status} onStatus={toggle} />
       <Header name="Amir" year="2024" />
