@@ -33,7 +33,7 @@ function Header() {
               <Link href="/hotels">Hotels Info</Link>
             </li>
             <li>
-              <Link href="/hotels">Contact Us</Link>
+              <Link href="/contact">Contact Us</Link>
             </li>
           </ul>
         </nav>
