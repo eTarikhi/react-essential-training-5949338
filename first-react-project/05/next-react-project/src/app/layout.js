@@ -32,6 +32,9 @@ function Header() {
             <li>
               <Link href="/hotels">Hotels Info</Link>
             </li>
+            <li>
+              <Link href="/hotels">Contact Us</Link>
+            </li>
           </ul>
         </nav>
       </div>
