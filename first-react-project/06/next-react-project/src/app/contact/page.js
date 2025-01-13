@@ -1,11 +1,22 @@
 export default function Page() {
+  async function submitForm(formData) {
+    "use server";
+    const formFields = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+    console.log("formFields", formFields);
+    console.log("Sending form data to the server...");
+    return formFields;
+  }
   return (
     <div className="grid grid-rows items-center justify-items-center min-h-screen">
       <main className="flex flex-col gap-8 row-start-2 items-center lg:items-start">
         <h1 className="text-4xl font-bold text-center sm:text-left">
           Contact Us
         </h1>
-        <form className="flex flex-col gap-4 w-full">
+        <form className="flex flex-col gap-4 w-full" action={submitForm}>
           <label htmlFor="name" className="flex flex-col gap-1">
             <span className="text-sm font-bold">Name</span>
             <input
@@ -36,7 +47,10 @@ export default function Page() {
               required
             />
           </label>
-          <button type="submit" className="bg-blue-500 text-white font-bold py-2 rounded hover:bg-blue-600">
+          <button
+            type="submit"
+            className="bg-blue-500 text-white font-bold py-2 rounded hover:bg-blue-600"
+          >
             Send
           </button>
         </form>
